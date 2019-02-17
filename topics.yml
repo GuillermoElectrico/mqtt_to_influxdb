@@ -1,0 +1,3 @@
+topics:
+    - name : Sensor temperatura 
+      topic: '/mqtt/sensor1/#'
