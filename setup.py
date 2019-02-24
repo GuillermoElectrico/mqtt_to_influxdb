@@ -26,7 +26,7 @@ setup(name='modbus_logger',
         'Operating System :: Raspbian',
         'Programming Language :: Python :: 3.5'
       ],
-      keywords='Digital Inputs Logger Pi',
+      keywords='MQTT to InfluxDB logger',
       install_requires=[]+(['setuptools', 'pyyaml', 'ez_setup', 'influxdb', 'paho-mqtt'] if "linux" in sys.platform else []),
       license='MIT',
       packages=[],
