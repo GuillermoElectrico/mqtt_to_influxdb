@@ -139,8 +139,8 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--mqtt-host', default="localhost", help='MQTT host. Default "localhost"')
-    parser.add_argument('--mqtt-port', default=1883, help='MQTT port. Default "1883"')
+    parser.add_argument('--mqtt_host', default="localhost", help='MQTT host. Default "localhost"')
+    parser.add_argument('--mqtt_port', default=1883, help='MQTT port. Default "1883"')
     parser.add_argument('--interval', default=60,
                         help='Delay start interval (seconds), default 60')
     parser.add_argument('--topics', default='topics.yml',
@@ -153,7 +153,7 @@ if __name__ == '__main__':
                         help='Specify log file, if not specified the log is streamed to console')
     args = parser.parse_args()
     host = args.mqtt_host
-    port = int(args.mqtt-port)
+    port = int(args.mqtt_port)
     interval = int(args.interval)
     loglevel = args.log.upper()
     logfile = args.logfile

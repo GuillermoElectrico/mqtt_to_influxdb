@@ -27,7 +27,7 @@ setup(name='modbus_logger',
         'Programming Language :: Python :: 3.5'
       ],
       keywords='Digital Inputs Logger Pi',
-      install_requires=[]+(['setuptools', 'pyyaml', 'ez_setup', 'influxdb', 'json', 'paho-mqtt'] if "linux" in sys.platform else []),
+      install_requires=[]+(['setuptools', 'pyyaml', 'ez_setup', 'influxdb', 'paho-mqtt'] if "linux" in sys.platform else []),
       license='MIT',
       packages=[],
       include_package_data=True,
