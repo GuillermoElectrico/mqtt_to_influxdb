@@ -10,7 +10,7 @@ except ImportError:
     with io.open('README.md', encoding="utf-8") as f:
         readme = f.read()
 
-setup(name='modbus_logger',
+setup(name='mqtt_to_influxdb',
       version=1.1,
       description='Store mqtt menssages in influxdb database ',
       long_description=readme,

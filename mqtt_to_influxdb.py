@@ -109,7 +109,7 @@ class DataCollector:
                                         influx_config['dbname'])
                 try:
                     DBclient.write_points(json_body)
-                    log.info(t_str + ' Data written for %d inputs in {}.' .format(influx_config['name']) % len(json_body) )
+                    log.info(t_str + ' Data written in {}.' .format(influx_config['name']) % len(json_body) )
                 except Exception as e:
                     log.error('Data not written! in {}' .format(influx_config['name']))
                     log.error(e)
