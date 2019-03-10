@@ -85,14 +85,16 @@ class DataCollector:
                 value = str(value)
             stored_message = {'value': value}
         
-        json_body = {
-            'measurement': 'mqtt2influx',
-            'tags': {
-                'topic': message.topic,
-            },
-            'time': t_str,
-            'fields': stored_message
-        }
+        json_body = [
+            {
+                'measurement': 'mqtt2influx',
+                'tags': {
+                    'topic': message.topic,
+                },
+                'time': t_str,
+                'fields': stored_message
+            }
+        ]
         
         if len(json_body) > 0:
 #            influx_id_name = dict() # mapping host to name
