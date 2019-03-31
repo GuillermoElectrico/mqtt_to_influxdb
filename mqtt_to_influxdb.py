@@ -143,8 +143,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--mqtt_host', default="localhost", help='MQTT host. Default "localhost"')
     parser.add_argument('--mqtt_port', default=1883, help='MQTT port. Default "1883"')
-    parser.add_argument('--interval', default=60,
-                        help='Delay start interval (seconds), default 60')
+    parser.add_argument('--delay', default=60,
+                        help='Delay start delay (seconds), default 60')
     parser.add_argument('--topics', default='topics.yml',
                         help='YAML file containing topics to subscribe and save in influxdb. Default "topics.yml"')
     parser.add_argument('--influxdb', default='influx_config.yml',
@@ -156,7 +156,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     host = args.mqtt_host
     port = int(args.mqtt_port)
-    interval = int(args.interval)
+    delay = int(args.delay)
     loglevel = args.log.upper()
     logfile = args.logfile
 
@@ -173,9 +173,9 @@ if __name__ == '__main__':
 
     log.addHandler(loghandle)
 
-    log.info('Sleep {} seconds for booting' .format( interval ))
+    log.info('Sleep {} seconds for booting' .format( delay ))
 
-    time.sleep( interval )
+    time.sleep( delay )
 
     log.info('Started app')
     
