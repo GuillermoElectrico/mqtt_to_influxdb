@@ -81,8 +81,8 @@ class DataCollector:
             try:
                 value = float(value)
             except ValueError:
-                pass
                 value = str(value)
+                pass
             stored_message = {'value': value}
         
         json_body = [
@@ -99,7 +99,7 @@ class DataCollector:
         if len(json_body) > 0:
 #            influx_id_name = dict() # mapping host to name
 
-            #log.debug(json_body)
+            log.debug(json_body)
 
             for influx_config in influxdb:
 #                influx_id_name[influx_config['host']] = influx_config['name']
@@ -111,7 +111,7 @@ class DataCollector:
                                         influx_config['dbname'])
                 try:
                     DBclient.write_points(json_body)
-                    log.info(t_str + ' Data written in {}.' .format(influx_config['name']) % len(json_body) )
+                    log.info(t_str + ' Data written in {}.' .format(influx_config['name']))
                 except Exception as e:
                     log.error('Data not written! in {}' .format(influx_config['name']))
                     log.error(e)
