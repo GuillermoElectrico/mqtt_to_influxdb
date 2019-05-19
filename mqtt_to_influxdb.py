@@ -68,19 +68,19 @@ class DataCollector:
         try:
             stored_message = json.loads(value)
             is_value_json_dict = isinstance(stored_message, dict)
-        except ValueError:
+        except :
             pass
 
         if is_value_json_dict:
             for key in stored_message.keys():
                 try:
                     stored_message[key] = float(stored_message[key])
-                except ValueError:
+                except :
                     pass
         else:
             try:
                 value = float(value)
-            except ValueError:
+            except :
                 value = str(value)
                 pass
             stored_message = {'value': value}
