@@ -81,7 +81,7 @@ class DataCollector:
             try:
                 value = float(value)
             except :
-                value = str(value)
+                value = 0.0
                 pass
             stored_message = {'value': value}
         
